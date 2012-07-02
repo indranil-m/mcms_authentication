@@ -1,4 +1,6 @@
 mcms_authentication
 ===================
 
-This is most flexible authentication system
+gem
+
+This is most flexible authentication solution
