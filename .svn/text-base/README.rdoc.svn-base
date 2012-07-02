@@ -1,3 +1,17 @@
 = McmsAuthentication
 
+=installation procedure
+
+  gemfile "mcms_authentication"
+  
+  bundle
+  
+  rails g mcms_authentication install
+  
+  follow the commands provided
+
+= License
+
+created by : Indranil Mukherjee
+    
 This project rocks and uses MIT-LICENSE.

@@ -371,6 +371,10 @@ input.button {
     vertical-align: top;
 
 }
+
+.roles {
+    width:90%;
+}
 .odd{
 
     background-color: #EAEAEA;
