@@ -1,0 +1,3 @@
+<%# AssetManager.get_libraries.each do |library| %>
+  <%#= javascript_include_tag  library %>
+<%# end %>

@@ -1,0 +1,125 @@
+<!--
+
+        @File Name                            :_form.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :Role form
+
+-->
+
+<!-- This line of code is responsible for javascript to be loaded for this particular page -->
+
+<% content_for :javascript, render(:partial => "form.js",:locals => {:all_plugins => all_plugins}) %>
+
+
+<!-- form for creating a new role -->
+<%= form_for(@role) do |f| %>
+
+<!-- If any error occured while creating a role (validation or any other) -->
+
+  <% if @role.errors.any? %>
+
+    <div id="error-explanation">
+
+      <h2><%= pluralize(@role.errors.count, "error") %> prohibited
+        this role from being saved:</h2>
+
+      <ul>
+
+        <% @role.errors.full_messages.each do |msg| %>
+
+          <li><%= msg %></li>
+          
+        <% end %>
+
+      </ul>
+
+    </div>
+
+  <% end %>
+
+<!-- error messages are displayed -->
+
+  <div class="field session-username clearfix">
+    
+    <%= f.label :title %><br />
+    
+    <%= f.text_field :title %></div>
+
+  <div id="records">
+    
+    <% i = 1 %>
+
+    <% all_plugins.each do |p| %>
+    
+      <div class="clearfix record <%=  cycle("odd", "even") %>" > <!-- Showing all plugins alternative css applied -->
+
+        <span class="title">
+
+          <span class="preview">
+            
+            Module <%= i %> <strong> <%= p.last %></strong> <!-- module -->
+            
+          </span>
+          
+        </span>
+
+        <!-- Access control user input of above module -->
+
+        <span class="actions">
+          
+          read <%= check_box_tag "#{p.last}read" %>
+
+          <%= hidden_field_tag "#{p.last}_read" %>
+          
+          create <%= check_box_tag "#{p.last}create" %>
+
+          <%= hidden_field_tag "#{p.last}_create" %>
+
+          update <%= check_box_tag "#{p.last}update" %>
+
+          <%= hidden_field_tag "#{p.last}_update" %>
+
+          delete <%= check_box_tag "#{p.last}destroy" %>
+
+          <%= hidden_field_tag "#{p.last}_destroy" %>
+
+          All <%= check_box_tag "#{p.last}all" %>
+          
+          <%= hidden_field_tag "#{p.last}_all" %>
+          
+        </span>
+        
+      </div>
+
+      <% i = i+1  %>
+    
+    <% end %>
+    
+  </div>
+
+  <div class="form-actions" style="border-radius: 5px 5px 5px 5px;">
+
+    <div class="form-actions-left">
+
+      <%= f.submit "Save",:class => "button"  %>
+
+      <%= link_to "Cancel",roles_path,:id => "cancel",:class => "close-dialog button" %>
+
+    </div>
+
+  </div>
+
+<% end %>
+
+<!-- End of form -->
+

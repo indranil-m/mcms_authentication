@@ -1,0 +1,38 @@
+<!--
+
+        @File Name                            :edit.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :Passwords edit page
+
+-->
+<h2>Change your password</h2>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+
+  <%= devise_error_messages! %>
+
+  <%= f.hidden_field :reset_password_token %>
+
+  <div><%= f.label :password, "New password" %><br />
+
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
+
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Change my password" %></div>
+  
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

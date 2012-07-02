@@ -1,0 +1,73 @@
+<!--
+
+        @File Name                            :index.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :Listing all roles
+
+-->
+
+<div id="main-content">
+
+  <div id="records">
+
+    <div class="add-user">
+
+      <a href="<%= new_role_path %>">
+
+        <div style="float: left;">
+
+          <%= image_tag "/assets/icons/add.png" %>
+
+        </div>
+
+        <div style="float: left;padding-left: 5px;">
+
+          Add new role
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <% @roles.each do |role| %>
+
+      <div class="clearfix record <%=  cycle("odd", "even") %>" > <!-- alternative div css change -->
+
+        <span class="title">
+
+          <span class="preview">
+
+          <strong> <%= role.title %></strong>
+
+          </span>
+
+        </span>
+
+        <span class="actions">
+
+         <% unless current_user.has_role? "superuser" %> <%=  link_to  image_tag("/assets/icons/delete.png" ,:alt=> "user_delete" ,:height => "16 px" ,:width => "16 px;"), role ,:confirm => "Are you sure u want to remove #{role.title} ?", :method => :delete %><% end %>
+
+          <%= link_to  image_tag("/assets/icons/application_edit.png" ,:alt=> "User_edit" ,:height => "16 px" ,:width => "16 px;"), edit_role_path(role) %>
+
+        </span>
+
+      </div>
+    
+    <% end %>
+
+  </div>
+  
+</div>
+
+<!-- End of listing -->

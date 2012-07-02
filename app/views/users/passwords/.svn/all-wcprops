@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/views/users/passwords
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/views/users/passwords/edit.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/views/users/passwords/new.html.erb
+END

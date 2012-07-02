@@ -1,0 +1,22 @@
+<!--
+
+        @File Name                            :confirmation_instructions.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :Confirmation instruction page
+
+-->
+<p>Welcome <%= @resource.email %>!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>

@@ -1,0 +1,25 @@
+<!--
+
+        @File Name                            :new.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :A new role page
+
+-->
+
+<div id="main-content" class="new-user-form" style="margin-top: 0px;padding-top: 21px; ">
+
+  <%= render :partial => "form",:locals => {:all_plugins => @all_plugins} %>
+
+</div>
+
+<!-- End of new role to be created -->

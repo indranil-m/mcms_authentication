@@ -1,0 +1,114 @@
+<!--
+
+        @File Name                            :edit.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :Edit an existing user
+
+-->
+
+<!-- This line of code is responsible for javascript to be loaded for this particular page -->
+
+<% content_for :javascript, render(:partial => "role.js",:locals => {:all_roles => @all_roles}) %>
+
+<!-- Editing an existing user -->
+
+<div id="main-content" class="new-user-form" style="margin-top: 0px;padding-top: 21px; ">
+
+  <!--
+
+    The following form is responsible for editing an existing user.
+
+  -->
+  
+  <%= form_for(resource, :as => resource_name, :url => mcms_update_user_path(resource_name), :html => { :method => :put }) do |f| %>
+  
+    <%= devise_error_messages! %>
+
+    <div class="field session-username clearfix"><%= f.label :email %><br />
+      
+      <%= f.email_field :email %>
+      
+    </div>
+
+    <div class="field session-username clearfix"><%= f.label :password %><br/> <i>(leave blank if you don't want to change it)</i>
+      
+      <br /> <br />
+      
+      <%= f.password_field :password, :autocomplete => "off" %></div>
+
+    <div class="field session-username clearfix"><%= f.label :password_confirmation %>
+
+      <br />
+
+      <%= f.password_field :password_confirmation %></div>
+
+
+    <div class="field plugin-access">
+
+      <span class="label-with-help">
+
+        <label class="title-label">Define Roles</label>
+
+      </span>
+
+      <ul class="checkboxes" id="plugins">
+
+        <%  @all_roles.each do |role| %>
+
+          <li>
+
+            <%= check_box_tag "#{role.id}" %>
+
+            <%= hidden_field_tag "#{role.id}_value" %>
+
+            <label class="stripped"><%= role.title %></label>
+
+          </li>
+
+        <% end %>
+
+      </ul>
+
+    </div>
+  
+    <%= hidden_field_tag "id",@user.id %>
+
+    <div class="form-actions" style="border-radius: 5px 5px 5px 5px;">
+
+      <div class="form-actions-left" style="width:200px;">
+
+        <%= f.submit "Save",:class => "button"  %>
+
+        <%= link_to "Cancel",mcms_users_path,:id => "cancel",:class => "close-dialog button" %>
+
+      </div>
+
+      <div class="form-actions-right" >
+
+        <% unless @user.has_role? "superuser" %><!-- Superuser should not be deleted any way -->
+
+          <%= link_to "Remove",mcms_destroy_user_path(:id => @user.id), :confirm => "Are you sure u want to remove #{@user.email} ?", :method => :delete ,:class => "delete-dialog button" %>
+
+        <% end %>
+
+      </div>
+
+    </div>
+  
+  <% end %>
+
+
+</div>
+
+
+<!-- End of edit user -->

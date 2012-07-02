@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/models
+END
+ability.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/models/ability.rb
+END
+plugin.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/models/plugin.rb
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/models/user.rb
+END
+role.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/models/role.rb
+END
+roles_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/models/roles_user.rb
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/models/.gitkeep
+END
+existing_model.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/models/existing_model.rb
+END

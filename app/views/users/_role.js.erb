@@ -1,0 +1,44 @@
+<!--
+
+        @File Name                            :_role.js.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :JS for users
+
+-->
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+
+    
+    
+    <% all_roles.each do |role| %>
+
+        $("#<%=  role.id %>").change(function(){
+
+          if($(this).is(":checked")){
+
+            $("#<%= role.id %>_value").val("1") //setting
+
+          }else{
+
+            $("#<%= role.id %>_value").val("0") // resetting
+
+          }
+        })
+
+    <% end %>
+
+  })
+</script>
+

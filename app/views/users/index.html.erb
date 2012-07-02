@@ -1,0 +1,81 @@
+<!--
+
+        @File Name                            :new.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :All users listed here
+
+-->
+
+<div id="main-content">
+
+  <div id="records">
+    
+    <div class="add-user">
+      
+      <!-- Create a new user -->
+
+      <a href="users/new">
+
+        <div style="float: left;">
+
+          <%= image_tag "/assets/icons/add.png" %>
+
+        </div>
+
+        <div style="float: left;padding-left: 5px;">
+
+          Add new user
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <% @users.each do |u| %>
+
+      <div class="clearfix record <%=  cycle("odd", "even") %>" > <!-- alternative css change -->
+
+        <span class="title">
+
+          <span class="preview">
+
+            <strong><%= u.email %></strong> added <%= u.created_at.strftime(USER_CREATION_TIME_FORMAT) %>
+
+          </span>
+
+        </span>
+
+        <span class="actions">
+
+          <!-- Super user should not be deleted -->
+          
+          <% unless u.has_role? "superuser" %>
+
+            <%=  link_to  image_tag("/assets/icons/delete.png" ,:alt=> "user_delete" ,:height => "16 px" ,:width => "16 px;"), mcms_destroy_user_path(:id => u.id) ,:confirm => "Are you sure u want to remove #{u.email} ?", :method => :delete %>
+          
+          <% end %>
+
+          <%= link_to  image_tag("/assets/icons/application_edit.png" ,:alt=> "User_edit" ,:height => "16 px" ,:width => "16 px;"), "users/edit/#{u.id}" %>
+
+        </span>
+
+      </div>
+
+    <% end %>
+
+  </div>
+  
+</div>
+
+<!-- End of user listing -->

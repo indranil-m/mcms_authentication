@@ -1,0 +1,107 @@
+<!--
+
+        @File Name                            :_form.js.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :The following script is responsible for role form access control data manipulation
+                                               We have used hidden  field to check whether a
+                                               particular access to a particular module is given
+                                               or not.(As the checkbox is checked or not)
+
+-->
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+
+
+
+  var checked = "checked";
+  
+  <% all_plugins.each do |p| %>
+  
+    $("<%=  "##{p.last}read" %>").change(function(){
+    
+    if($(this).is(':checked')){
+
+    $("<%=  "##{p.last}_read" %>").val("1");
+
+    }else{
+
+    $("<%=  "##{p.last}_read" %>").val("0");
+    }
+
+    })
+
+    $("<%=  "##{p.last}create" %>").change(function(){
+    if($(this).is(':checked')){
+
+    $("<%=  "##{p.last}_create" %>").val("1");
+
+    }else{
+
+    $("<%=  "##{p.last}_create" %>").val("0");
+    }
+
+    })
+
+    $("<%=  "##{p.last}update" %>").change(function(){
+    if($(this).is(':checked')){
+
+    $("<%=  "##{p.last}_update" %>").val("1");
+
+    }else{
+
+    $("<%=  "##{p.last}_update" %>").val("0");
+    }
+
+    })
+
+    $("<%=  "##{p.last}destroy" %>").change(function(){
+    if($(this).is(':checked')){
+
+    $("<%=  "##{p.last}_destroy" %>").val("1");
+
+    }else{
+
+    $("<%=  "##{p.last}_destroy" %>").val("0");
+    }
+
+    })
+
+    $("<%=  "##{p.last}all" %>").change(function(){
+    if($(this).is(':checked')){
+    $("<%=  "##{p.last}read" %>").attr(checked,checked);
+    $("<%=  "##{p.last}create" %>").attr(checked,checked);
+    $("<%=  "##{p.last}update" %>").attr(checked,checked);
+    $("<%=  "##{p.last}destroy" %>").attr(checked,checked);
+    $("<%=  "##{p.last}_all" %>").val("1");
+
+
+    }else{
+
+    $("<%=  "##{p.last}read" %>").removeAttr(checked);
+    $("<%=  "##{p.last}create" %>").removeAttr(checked);
+    $("<%=  "##{p.last}update" %>").removeAttr(checked);
+    $("<%=  "##{p.last}destroy" %>").removeAttr(checked);
+    $("<%=  "##{p.last}_all" %>").val("0");
+    }
+
+    })
+  <% end %>
+
+
+  })
+  
+</script>
+
+<!-- End of script -->

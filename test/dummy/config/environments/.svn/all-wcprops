@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/test/dummy/config/environments
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/test/dummy/config/environments/test.rb
+END
+development.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/test/dummy/config/environments/development.rb
+END
+production.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/test/dummy/config/environments/production.rb
+END

@@ -1,0 +1,82 @@
+=begin
+
+  @File Name                            :ability.rb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+  @Date Modified                        :2012-06-14
+
+  @Last Modification Details            :Making it as mcms project standard
+
+  @Purpose                              :This class is responsible for defining the abilities
+                                         of a particular user/current user
+
+=end
+
+class Ability
+
+  #including Cancan ability module
+  
+  include CanCan::Ability
+
+  #including Models module from lib/mcms_authentication/models.rb
+  
+  include Models
+
+
+  #  @Params                               : No parameter
+  #  @Returns                              : Nothing is returned 
+  #  @Purpose                              : Managing user roles
+  
+  def initialize(user)
+    
+    #fetching all the roles of current user    
+    roles = Role.fetch_roles user
+    
+    
+  #defining abilities of current user
+  
+    roles.each do |role|
+      
+      can :manage, :all if role == "superuser"
+
+      # plugin access for a particular user role      
+      @accessible_plugins = Plugin.find_all_by_role_id(Role.find_by_title(role).id)
+
+      
+      
+      @accessible_plugins.each do |plugin|
+
+        puts "xxxxxxxxxxxxxxxxxxxxxx" + plugin.role_module.to_s
+        
+      #  models = get_relations plugin.role_module # getting associated models
+
+          models = ExistingModel.find_all_by_plugin_name(plugin.role_module.to_s)
+          
+        models.each do |model|
+
+          
+          # defining access control 
+         
+          can :read , model.model_name.constantize if plugin.role_read? # setting read authorization
+
+          can :create , model.model_name.constantize if plugin.role_create? # setting create authorization
+
+          can :update , model.model_name.constantize if plugin.role_update? # setting update authorization
+
+          can :destroy , model.model_name.constantize if plugin.role_destroy?  # setting destroy authorization
+
+          can :manage , model.model_name.constantize if plugin.role_manage?  # setting manage authorization
+
+        end
+        
+      end
+
+    end
+    
+  end
+end

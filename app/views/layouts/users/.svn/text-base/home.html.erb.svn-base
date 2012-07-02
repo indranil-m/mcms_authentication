@@ -1,0 +1,99 @@
+<!--
+
+        @File Name                            :home.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :Custom layout
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  <head>
+    
+    <title>Mcms Authentication</title>
+    
+    <!-- Following is the stylesheets included using rails helper stylesheet_link_tag -->
+
+    <%= stylesheet_link_tag    "authentication_global", :media => "all" %>
+
+    <!-- Following is the javascripts included using rails helper javascript_include_tag -->
+
+    <%= javascript_include_tag "application","authentication_global" %>   
+    
+
+    <!-- ".ui.core","ui.widget","ui.tabs" are used for tabbed pane -->
+    <%= render :partial => "layouts/users/javascript" %>
+    <!-- This is to prevent from outside forgery -->
+
+    <%= csrf_meta_tags %>
+
+    <!-- specific pages needs some javascripts -->
+
+    <%= yield :javascript %>
+
+  </head>
+
+  <body>
+
+    <div id="header">
+      <div id="site-bar-branding">
+        <span id="site-bar-company_name">
+          MCMS Authentication
+        </span>
+
+        <% if user_signed_in? %> <!-- checking if any user logged in -->
+
+          <a id="logout" href="<%=  mcms_users_logout_path %>">Log out</a>
+
+        <% end %>
+          
+      </div>
+    </div>
+    <%  if  flash[:notice] || flash[:error] %> <!-- If any notice or errors are there -->
+    
+      <div id="flash-container">
+
+
+        <div style="visibility: visible; opacity: 1;" class="flash flash-notice" id="flash">
+
+          <%=  flash[:notice] || flash[:error] %>
+          
+          <a id="flash-close" href="">Close</a>
+          
+        </div>
+
+      </div>
+    
+    <% end %>
+    
+    <div id="tabs">
+
+      <ul>
+
+        <li  data-path="/mcms/users"><a id="users" href="/mcms/users" style="cursor: pointer;">Users</a></li>
+        
+        <li data-path="/mcms/roles" ><a id="roles" href="/mcms/roles" style="cursor: pointer">Roles</a></li>
+        
+      </ul>
+
+    </div>
+    
+    <!-- yielding from views -->
+    
+    <%= yield %>
+
+  </body>
+  
+</html>

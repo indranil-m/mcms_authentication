@@ -1,0 +1,84 @@
+<!--
+**************************************************************************************************************
+
+        FileName:                                          new.html.erb
+
+	Company Name and Copyright information:            Mindfire Solutions Pvt. Ltd.
+
+	Creator name and date:                             Indranil Mukherjee 04/06/2012
+
+	Description of the file contents:                  Sign in page
+
+
+**************************************************************************************************************
+-->
+
+<div class="new-session" >
+  
+  <h2><%=  t(:sign_in,:default => "Please Sign in") %></h2>
+  
+  <div id="logincontainer" style="margin-top: 10px;">
+
+    <!--<div style="visibility: visible; opacity: 1;margin-top: 20px;margin-left: 5px;margin-right: 5px;margin-bottom: 20px; " class="mcms_flash mcms_flash_notice" id="mcms_flash">
+
+      <%#= t(:default_uname) %> '<strong></strong>'
+      
+      <a id="mcms_flash_close" href="#">Close</a>
+      
+      
+      
+    </div>-->
+      
+    <!--
+
+    The following form is responsible for sign in
+
+    -->
+    
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+      <div class="field session-username clearfix"><%= f.label :email %><br />
+
+        <%= f.email_field :email %>
+        
+      </div>
+
+      <div class="field session-username clearfix"><%= f.label :password %><br />
+
+        <%= f.password_field :password %>
+
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+    
+    <div class="remembers">
+
+    <div style="float: left"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+
+    <div style="float: right; font-weight: normal;"><%= link_to "Forgot your password?", new_password_path(resource_name) ,:style => "margin-right: 5px;" %></div>
+
+    <div style="clear: both"/>
+      
+    </div>
+    
+      <% end -%>
+
+      <div class="form-actions">
+
+        <div class="form-actions-left"><%= f.submit "Sign in" ,:class => "button"%>
+
+        </div>
+
+        <div class="form-actions-right">
+
+        </div>
+
+      </div>
+    
+    <% end %>
+    
+  </div>
+
+
+  
+</div>

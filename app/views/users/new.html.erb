@@ -1,0 +1,98 @@
+<!--
+
+        @File Name                            :new.html.erb
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-14
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :A new user page
+
+-->
+
+<!-- This line of code is responsible for javascript to be loaded for this particular page -->
+
+<% content_for :javascript, render(:partial => "role.js",:locals => {:all_roles => @all_roles}) %>
+
+<div id="main-content" class="new-user-form" style="margin-top: 0px;padding-top: 21px; ">
+
+  <!--
+
+    The following form is responsible
+    for creating a new user with email and password.
+
+  -->
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+    <%= devise_error_messages! %>
+
+    <div class="field session-username clearfix">
+
+      <%= f.label :email %><br />
+
+      <%= f.email_field :email %></div>
+
+    <div class="field session-username clearfix">
+
+      <%= f.label :password %><br />
+
+      <%= f.password_field :password %></div>
+
+    <div class="field session-username clearfix"><%= f.label :password_confirmation %><br />
+
+      <%= f.password_field :password_confirmation %></div>
+
+
+    <div class="field plugin-access">
+
+      <span class="label-with-help">
+
+        <label for="user-plugin-access" class="title-label">Define Roles</label>
+
+      </span>
+
+      <ul class="checkboxes" id="plugins">
+
+        <%  @all_roles.each do |role| %>
+
+          <li>
+
+            <%= check_box_tag "#{role.id}" %>
+
+            <%= hidden_field_tag "#{role.id}_value" %>
+
+            <label for="plugins-refinery-files" class="stripped"><%= role.title %></label>
+
+          </li>
+
+        <% end %>
+
+      </ul>
+
+    </div>
+
+    <div class="form-actions" style="border-radius: 5px 5px 5px 5px;">
+
+      <div class="form-actions-left">
+
+        <%= f.submit "Save",:class => "button"  %>
+
+        <%= link_to "Cancel",mcms_users_path,:id => "cancel",:class => "close-dialog button" %>
+
+      </div>
+
+    </div>
+
+
+  <% end %>
+
+
+</div>
+
+<!-- End of New User creation -->

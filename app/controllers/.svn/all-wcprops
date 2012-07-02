@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/controllers
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/controllers/.gitkeep
+END
+users_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/controllers/users_controller.rb
+END
+application_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/controllers/application_controller.rb
+END
+roles_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/controllers/roles_controller.rb
+END
+home_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/app/controllers/home_controller.rb
+END

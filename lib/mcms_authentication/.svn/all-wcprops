@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/lib/mcms_authentication
+END
+seeds.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/lib/mcms_authentication/seeds.rb
+END
+engine.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/lib/mcms_authentication/engine.rb
+END
+version.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/lib/mcms_authentication/version.rb
+END

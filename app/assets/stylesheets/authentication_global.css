@@ -1,0 +1,420 @@
+/*
+
+        @File Name                            :authentication_global.css
+
+	@Company Name                         :Mindfire Solutions Pvt. Ltd.
+
+	@Creator Name                         :Indranil Mukherjee
+
+	@Date Created                         :2012-06-04
+
+        @Date Modified                        :2012-06-15
+
+        @Last Modification Details            :Making it as mcms project standard
+
+        @Purpose                              :Global css
+
+*/
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ * require_self
+ * require_tree .
+
+*/
+
+/*
+
+    Defining css for the whole application
+    It can be overridden easily
+
+*/
+
+/* Setting the font parameters throughout the application */
+
+* {
+    color: #41403C;
+    font-family: Arial;
+    font-size: 13px;
+  }
+
+/* body css */
+
+body{
+
+    background: url("/assets/background/page_bg.png") repeat scroll 0 0 #303030;
+    color: #41403C;
+    font-family: Arial;
+    font-size: 13px;
+}
+
+/*  login page css */
+
+
+.new-session{
+
+    background: #fff;
+    width: 40%;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+/* common anchors inside body css */
+
+body a{
+
+    font-size: 14px;
+    color: #ccc;
+}
+
+/*  login page css h2 */
+
+.new-session h2{
+
+    min-height: 40px;
+    background: none repeat scroll 0 0 #EAEAEA;
+    color: #41403C;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    padding-bottom: 0;
+    padding-top: 15px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+
+}
+
+/* css for flash notice area /div */
+
+.flash-notice{
+
+    background: url("/assets/icons/accept.png") no-repeat scroll 7px 7px #E0F5E0;
+    border: 1px solid #00A017;
+    color: #00A017;
+    border: 1px solid #00A017;
+    margin-bottom: 15px;
+    padding: 8px 8px 8px 30px;
+    position: relative;
+    font-family: Arial;
+    font-size: 13px;
+
+}
+
+/* css for error display area */
+
+#error-explanation{
+
+    background: url("/assets/icons/cancel.png") no-repeat scroll 7px 10px #FFB1B1;
+    border: 1px solid red;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 0 5px 5px 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+
+}
+
+/* close flash notice link css */
+
+#flash-close{
+
+    text-transform: lowercase;
+}
+
+/* flash notice mother div css */
+
+.flash {
+
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* anchor inside flash notice css */
+
+.flash a{
+
+    position: absolute;
+    right: 9px;
+    top: 7px;
+}
+
+/* partial css  for fields */
+
+#loginContainer .field{
+
+    position: relative;
+    width: 100%;
+}
+
+/* any field css */
+
+.field {
+
+    margin-bottom: 20px;
+}
+
+/* fixing display */
+
+.clearfix {
+
+    display: block;
+}
+
+/* label for fields css */
+
+.field label{
+
+    font-size: 14px;
+    display: block;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* input css */
+
+.field input {
+    background: url("/assets/background/text_field_background.png") repeat-x scroll 0 0 white;
+    height: 31px;
+    border: 1px solid #7F9DB9;
+    line-height: 20px;
+    padding: 0.4% 0.5%;
+    width: 520px;
+    margin-left: 5px;
+}
+
+/* form for user crud css */
+
+.new-user-form input{
+
+    height: 22px ;
+
+}
+
+
+/*  user crud actions css */
+
+.form-actions{
+
+    background-color: #F2F2F2;
+    border: 1px solid #CCCCCC;
+    height: 45px;
+    margin-top: 10px;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+/* custom positioning of a particular div  */
+
+.field form-actions form-actions-left{
+
+    left: 10px;
+
+}
+
+/*  user crud actions css special attributes */
+
+.form-actions-right{
+
+    float: right;
+    margin-top: -35px;
+    margin-right: 5px;
+
+}
+
+/*  user crud actions css special attributes */
+
+.delete-dialog{
+
+    background: none repeat scroll 0 0 #EE1100 !important;
+    text-decoration:none;
+}
+
+
+.remembers{
+
+    color: #41403C;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.close-dialog{
+
+    background: none repeat scroll 0 0 #BCBCBC !important;
+    text-decoration:none;
+}
+
+/* css for buttons */
+
+a.button {
+    padding-bottom: 3px;
+    background: none repeat scroll 0 0 #22A7F2;
+    border: 0 none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 0 14px;
+
+    border-radius: 6px 6px 6px 6px;
+    -moz-box-sizing: border-box;
+
+
+
+}
+
+input.button {
+    padding-bottom: 3px;
+    background: none repeat scroll 0 0 #22A7F2;
+    border: 0 none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 0 14px;
+
+    border-radius: 6px 6px 6px 6px;
+    -moz-box-sizing: border-box;
+
+
+
+}
+
+#header{
+
+    background: none repeat scroll 0 0 #22A7F2;
+    height: 47px;
+}
+
+#tabs{
+
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#tabs ul li{
+
+    opacity: 6.35;
+
+}
+#site-bar-branding{
+
+    color: white;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 47px;
+    float: right;
+    margin-right: 100px;
+}
+#site-bar-branding a{
+
+    color: white
+}
+#flash-container{
+
+    margin-top: 10px;
+}
+#main-content {
+
+    margin-left: 100px;
+    margin-right: 100px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background: white;
+    min-height: 98px;
+    padding-bottom: 20px;
+}
+
+#records{
+
+    padding-top:10px;
+    padding-bottom: 15px;
+}
+
+.record{
+
+    margin-left: 10px;
+    line-height: 35px;
+    list-style: none outside none;
+    margin-bottom: 2px;
+    width:550px;
+    padding: 0 5px;
+    position: relative;
+    vertical-align: top;
+
+}
+.odd{
+
+    background-color: #EAEAEA;
+}
+.even{
+
+    background-color: #FFFFFF;
+}
+.actions{
+
+    float: right;
+}
+.add-user{
+
+    float: right;
+    background-color: #DBEDFF;
+    background-position: 12px 50%;
+    background-repeat: no-repeat;
+    border: 1px solid #65C3F7;
+    display: block;
+    padding: 9px 12px 9px 36px;
+    margin-right: 160px;
+    width: 300px;
+}
+
+.checkboxes{
+
+    background: none
+
+}
+
+ul.checkboxes li {
+
+    list-style: none outside none;
+
+}
+
+.stripped {
+
+    display: inline !important;
+    float: none;
+    font-size: 1em !important;
+    font-weight: normal !important;
+    margin: 0;
+    padding: 0;
+
+}
