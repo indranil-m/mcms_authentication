@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 58
-/svn/SVNHOME/!svn/ver/12357/mcms/trunk/mcms_authentication
+/svn/SVNHOME/!svn/ver/13264/mcms/trunk/mcms_authentication
 END
 Gemfile.lock
 K 25
@@ -13,7 +13,7 @@ mcms_authentication.gemspec
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/SVNHOME/!svn/ver/12589/mcms/trunk/mcms_authentication/mcms_authentication.gemspec
+/svn/SVNHOME/!svn/ver/13264/mcms/trunk/mcms_authentication/mcms_authentication.gemspec
 END
 Rakefile
 K 25
@@ -37,7 +37,7 @@ Gemfile
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svn/SVNHOME/!svn/ver/12022/mcms/trunk/mcms_authentication/Gemfile
+/svn/SVNHOME/!svn/ver/13264/mcms/trunk/mcms_authentication/Gemfile
 END
 MIT-LICENSE
 K 25

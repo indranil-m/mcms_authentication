@@ -21,3 +21,4 @@ gem "cancan" , :git => "https://github.com/ryanb/cancan.git" # authorization
 gem 'devise' # authentication
 
 gem 'safe_attributes' # required for naming convention of activerecord mismatch
+

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/SVNHOME/!svn/ver/12357/mcms/trunk/mcms_authentication/lib/generators/mcms_authentication
+/svn/SVNHOME/!svn/ver/13264/mcms/trunk/mcms_authentication/lib/generators/mcms_authentication
 END
 USAGE
 K 25
@@ -13,5 +13,5 @@ mcms_authentication_generator.rb
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svn/SVNHOME/!svn/ver/12357/mcms/trunk/mcms_authentication/lib/generators/mcms_authentication/mcms_authentication_generator.rb
+/svn/SVNHOME/!svn/ver/13264/mcms/trunk/mcms_authentication/lib/generators/mcms_authentication/mcms_authentication_generator.rb
 END

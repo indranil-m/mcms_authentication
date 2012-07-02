@@ -85,13 +85,13 @@ class RolesController < ApplicationController
     @all_plugins = get_all_plugins 
 
     
-#    for i in 0..@all_plugins.length - 1
-#
-#      if((@all_plugins[i]&@all_plugins[i+1]).any?)
-#        @all_plugins[i] = (@all_plugins[i] + @all_plugins[i+1]).uniq
-#      end
-#
-#    end
+    #    for i in 0..@all_plugins.length - 1
+    #
+    #      if((@all_plugins[i]&@all_plugins[i+1]).any?)
+    #        @all_plugins[i] = (@all_plugins[i] + @all_plugins[i+1]).uniq
+    #      end
+    #
+    #    end
 
     respond_to do |format|
       
@@ -111,10 +111,10 @@ class RolesController < ApplicationController
           if models.nil?
             plugin.each do |pl|
 
-             existing_model = ExistingModel.new
-             existing_model.plugin_name = plugin.last
-             existing_model.model_name = pl
-             existing_model.save
+              existing_model = ExistingModel.new
+              existing_model.plugin_name = plugin.last
+              existing_model.model_name = pl
+              existing_model.save
              
             end
             
@@ -261,10 +261,10 @@ class RolesController < ApplicationController
             
             plugin.each do |pl|
 
-             existing_model = ExistingModel.new
-             existing_model.plugin_name = plugin.last
-             existing_model.model_name = pl
-             existing_model.save
+              existing_model = ExistingModel.new
+              existing_model.plugin_name = plugin.last
+              existing_model.model_name = pl
+              existing_model.save
 
             end
 

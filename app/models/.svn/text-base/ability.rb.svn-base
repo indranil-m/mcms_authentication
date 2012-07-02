@@ -51,7 +51,7 @@ class Ability
       
       @accessible_plugins.each do |plugin|
 
-        puts "xxxxxxxxxxxxxxxxxxxxxx" + plugin.role_module.to_s
+        
         
       #  models = get_relations plugin.role_module # getting associated models
 

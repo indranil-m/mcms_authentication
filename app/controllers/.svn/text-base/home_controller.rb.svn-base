@@ -22,23 +22,23 @@ class HomeController < ApplicationController
 
 
 
-      # This is basically the root path of the application.
-      # authentication required because everything will start by superuser
-      # in authentication module
+  # This is basically the root path of the application.
+  # authentication required because everything will start by superuser
+  # in authentication module
 
 
 
-      before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
-      layout HOME_LAYOUT
+  layout HOME_LAYOUT
 
-      #  @Params                               : No parameter
-      #  @Returns                              : Nothing is returned
-      #  @Purpose                              : Home page action
+  #  @Params                               : No parameter
+  #  @Returns                              : Nothing is returned
+  #  @Purpose                              : Home page action
 
-      def index
+  def index
 
-      end
+  end
 
 
 end

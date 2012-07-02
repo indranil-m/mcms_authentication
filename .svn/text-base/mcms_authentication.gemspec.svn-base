@@ -7,11 +7,10 @@ require "mcms_authentication/version"
 Gem::Specification.new do |s|
   s.name        = "mcms_authentication"
   s.version     = McmsAuthentication::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of McmsAuthentication."
-  s.description = "TODO: Description of McmsAuthentication."
+  s.authors     = ["INDRANIL MUKHERJEE"]
+  s.email       = ["indranil.since87@gmail.com"]
+  s.summary     = "Most flexible authentication and authorization solution"
+  s.description = "It's a combination of devise and CanCan gem and flexible to identify your modules"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
