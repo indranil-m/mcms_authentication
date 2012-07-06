@@ -1,4 +1,6 @@
 module McmsAuthentication
   class Engine < ::Rails::Engine
+    require 'devise'
+    require "cancan"
   end
 end

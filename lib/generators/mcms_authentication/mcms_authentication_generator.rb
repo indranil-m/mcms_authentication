@@ -17,6 +17,7 @@
 =end
 
 class McmsAuthenticationGenerator < Rails::Generators::NamedBase
+  
   source_root File.expand_path('../templates', __FILE__)
 
   desc "Installing MCMS_AUTHENTICATION"
@@ -27,11 +28,24 @@ class McmsAuthenticationGenerator < Rails::Generators::NamedBase
 
   def add_migrations
 
-    copy_file "migrate/20120605112804_devise_create_users.rb", "db/migrate/20120605112804_devise_create_users.rb"
-    copy_file "migrate/20120608104637_create_roles.rb", "db/migrate/20120608104637_create_roles.rb"
-    copy_file "migrate/20120608140424_create_roles_users.rb", "db/migrate/20120608140424_create_roles_users.rb"
-    copy_file "migrate/20120612050932_create_plugins.rb", "db/migrate/20120612050932_create_plugins.rb"
-    copy_file "migrate/20120625114340_create_existing_models.rb", "db/migrate/20120625114340_create_existing_models.rb"
+    say "Copying migrations........."
+
+    rake("mcms_authentication_engine:install:migrations")
+
+    # create file deb/seeds.rb to parent app if not exists
+      create_file "db/seeds.rb" unless File.exists?(File.join(destination_root, 'db', 'seeds.rb'))
+
+      # append data to app's seeds.rb
+      append_file 'db/seeds.rb', :verbose => true do
+
+        <<-EOH
+
+        McmsAuthentication::Engine.load_seed
+
+        EOH
+
+      end # end block
+  
   end
 
   #  @Params                               : No parameter
@@ -40,10 +54,8 @@ class McmsAuthenticationGenerator < Rails::Generators::NamedBase
 
   def copy_core_libraries
 
-   # copy_file "asset_manager.rb", "lib/asset_manager.rb" # may be required later
-
     copy_file "models.rb", "lib/mcms_authentication/models.rb" # module logic
-
+    
   end
 
   #  @Params                               : No parameter
@@ -70,40 +82,7 @@ class McmsAuthenticationGenerator < Rails::Generators::NamedBase
 
       '
     end
-
-    append_to_file File.join('db', 'seeds.rb') do
-      " #writting seeds \n
-
-               User.create!(:email => 'admin@mcms.com' ,:password => 'admin123' )\n
-                Role.create!(:title => 'superuser')\n
-
-                u = User.find_by_email('admin@mcms.com')\n
-
-                r = Role.find_by_title('superuser')\n
-
-                RolesUser.create!(:user_id => u.id , :role_id => r.id)\n
-      "
-
-    end
-
-    insert_into_file File.join('config', 'application.rb'), :after => "Rails::Application\n" do
-
-      ' # Writting configurations
-              config.to_prepare do
-
-
-                Devise::SessionsController.layout "users/devise"
-                Devise::PasswordsController.layout "users/devise"
-
-              end
-
-             # Custom directories with classes and modules you want to be autoloadable.
-              config.autoload_paths += %W(#{config.root}/lib)
-
-              config.autoload_paths += Dir["#{config.root}/lib/**/"]
-      '
-    end
-
+    
   end
 
   #  @Params                               : No parameter
@@ -113,7 +92,7 @@ class McmsAuthenticationGenerator < Rails::Generators::NamedBase
   def prompt_user
 
     say "\ndon't forget to run the following \n
-          bundle install\n
+          
           rake db:migrate\n
           rake db:seed\n
 
@@ -124,6 +103,7 @@ class McmsAuthenticationGenerator < Rails::Generators::NamedBase
           load_and_authorize_resource  \n
 
           Enjoy!\n\n"
+    
   end
 
   
